@@ -12,3 +12,14 @@ const images = [
     alt: 'Group of Horses Running',
   },
 ];
+
+const galleryListEl = document.querySelector('.gallery');
+
+const createMarkup = gallery =>
+  gallery
+    .map(image => `<li class="card-set-item"><img src='${image.url}' alt='${image.alt}'></li>`)
+    .join(' ');
+
+galleryListEl.insertAdjacentHTML('afterbegin', createMarkup(images));
+
+galleryListEl.classList.add('card-set');
