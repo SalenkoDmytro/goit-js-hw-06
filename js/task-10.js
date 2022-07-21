@@ -25,12 +25,12 @@ function createBoxes(amount) {
         `<div   style=" width:${size}px; height:${size}px; background-color:${getRandomHexColor()}"></div>`
     )
     .join('');
-  console.log(markup);
 
   refs.boxes.insertAdjacentHTML('afterbegin', markup);
 }
 
 function destroyBoxes() {
+  refs.input.value = '';
   const elements = [...refs.boxes.children];
 
   elements.forEach(element => {
