@@ -1,5 +1,10 @@
-const inputEl = document.querySelector('#name-input');
+const refs = {
+  inputEl: document.querySelector('#name-input'),
+  outputTitleEl: document.querySelector('#name-output'),
+};
 
-const outputTitleEl = document.querySelector('#name-output');
+refs.inputEl.addEventListener('input', onInputChangeText);
 
-inputEl.addEventListener('input', event => (outputTitleEl.textContent = event.currentTarget.value));
+function onInputChangeText(event) {
+  refs.outputTitleEl.textContent = event.currentTarget.value;
+}
