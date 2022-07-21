@@ -6,16 +6,12 @@ formRef.addEventListener('submit', onFormSubmit);
 function onFormSubmit(event) {
   event.preventDefault();
 
-  for (const input of inputs) {
-    if (input.value === '') {
-      return alert(`Эй, ты же ещё не заполнил ${input.name}!`);
-    }
+  const email = event.currentTarget.elements.email.value;
+  const password = event.currentTarget.elements.password.value;
+
+  if (email === '' || password === '') {
+    return alert(`Эй, ты же ещё не заполнил!!!`);
   }
-
-  const formElements = event.currentTarget.elements;
-
-  const email = formElements.email.value;
-  const password = formElements.password.value;
 
   const formData = {
     email,

@@ -11,6 +11,10 @@ refs.createBtn.addEventListener('click', onCreateBtnClick);
 refs.destroyBtn.addEventListener('click', destroyBoxes);
 
 function onCreateBtnClick() {
+  if (refs.input.value === '') {
+    return;
+  }
+
   const amount = Number(refs.input.value);
 
   createBoxes(amount);
@@ -18,7 +22,6 @@ function onCreateBtnClick() {
 
 function createBoxes(amount) {
   const sizes = countSize(amount);
-
   const markup = sizes
     .map(
       size =>
@@ -31,11 +34,7 @@ function createBoxes(amount) {
 
 function destroyBoxes() {
   refs.input.value = '';
-  const elements = [...refs.boxes.children];
-
-  elements.forEach(element => {
-    element.remove();
-  });
+  refs.boxes.innerHTML = '';
 }
 
 function countSize(number) {
