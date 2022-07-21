@@ -23,6 +23,8 @@ function onFormSubmit(event) {
   };
 
   console.log(formData);
+  formRef.reset();
+
   // const formData = new FormData(event.currentTarget);
   // const obj = {};
 
