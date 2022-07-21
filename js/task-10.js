@@ -11,7 +11,7 @@ refs.createBtn.addEventListener('click', onCreateBtnClick);
 refs.destroyBtn.addEventListener('click', destroyBoxes);
 
 function onCreateBtnClick() {
-  if (refs.input.value === '') {
+  if (refs.input.value.trim() === '') {
     return;
   }
 
